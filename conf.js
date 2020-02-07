@@ -4,7 +4,7 @@
     specs: ['spec1.js']
   }; */
 
-  // An example configuration file.
+  // An example configuration file, whicb doesn't need selenium server to be up & running and takes chrome browser by default
 exports.config = {
   directConnect: true,
 
