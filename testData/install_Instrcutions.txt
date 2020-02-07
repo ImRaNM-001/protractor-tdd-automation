@@ -1,0 +1,50 @@
+1- npm install -g protractor
+check protractor version as protractor -v
+
+2- webdriver-manager update
+
+3- webdriver-manager start (do it from cmd not from vscode terminal)
+
+4- npm init (use below info):
+package name: (protractor_learning) test
+version: (1.0.0)
+description: to_learn_protractor
+entry point: (index.js)
+test command:
+git repository:
+keywords:
+author: Imran
+license: (ISC)
+About to write to C:\Users\Imran-A.Mazumder\OneDrive\Documents\REITERATE_PRACTICE_AUTOMATION\jS_Workspace\protractor_Learning\package.json:
+
+5- open package.json (post its creation) and add dependencies as below:
+Note: in VsCode it takes automatically by ctrl+space
+ "dependencies": {
+    "protractor": "^5.4.3",
+    "jasmine": "3.5.0"
+  },
+
+6- run npm install from same location (just like mvn clean install
+
+7- create folderStructure manually (see git repo with VsCode for more)
+
+8- Create 2 files conf.js and spec_Ex1.js, override them by copy pasting code from location C:\Users\Imran-A.Mazumder\AppData\Roaming\npm\node_modules\protractor\example
+
+9- Run the test using the command protractor conf.js
+
+10- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
