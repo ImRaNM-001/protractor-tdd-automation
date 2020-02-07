@@ -1,5 +1,6 @@
 # protractor_Learning
-My First Protractor Repo for Practice
+My First Protractor Repo for beginner practice:
+
 How to Install Protractor_Instructions.txt
 
 1- npm install -g protractor		[advisable to run from different path like: C:\testAutomationPractice\installationArea\Protractor but always saves the installed files in default windows directory C:\Users\imz_x\AppData\Roaming\npm\node_modules\protractor]
