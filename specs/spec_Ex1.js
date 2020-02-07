@@ -10,7 +10,7 @@ describe('angularjs homepage', function() {
     });
   
     describe('todo list', function() {
-      var todoList;s
+      var todoList;
   
       beforeEach(function() {
         browser.get('http://www.angularjs.org');
