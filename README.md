@@ -40,7 +40,20 @@ About to write to C:\Users\Imran-A.Mazumder\OneDrive\Documents\REITERATE_PRACTIC
 
 9- Run the tests using the command protractor conf.js
 
-10- 
+10- If any script running issue occurs with message like protractor.ps1 cannot be loaded because running scripts is disabled on this system. This is because The PowerShell execution policy is default set to Restricted. We have to change the PowerShell execution policies to RemoteSigned.
+
+Do the following (must hit a i.e, [A] Yes to All ) :
+========================================
+Set-ExecutionPolicy RemoteSigned
+
+Execution Policy Change
+The execution policy helps protect you from scripts that you do not trust. Changing the execution policy might expose
+you to the security risks described in the about_Execution_Policies help topic at
+https:/go.microsoft.com/fwlink/?LinkID=135170. Do you want to change the execution policy?
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): a
+
+
+11- 
 
 
 
