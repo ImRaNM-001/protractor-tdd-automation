@@ -18,10 +18,14 @@ exports.config = {
 
   // Spec patterns are relative to the current working directory when
   // protractor is called.
-  specs: ['specs/*spec_Ex1.js'],
+  specs: ['specs/*spec_Ex2.js'],
 
   // Options to be passed to Jasmine.
   jasmineNodeOpts: {
     defaultTimeoutInterval: 30000
+  },
+
+  onPrepare: () => {
+    browser.manage().window().maximize(); // maximize the browser before executing the feature files
   }
 };
