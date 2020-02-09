@@ -28,7 +28,7 @@ describe('print & verify a result', () =>{
 
     // TC2: print the result in console
     it('print the div result in console', async function() {
-    //    console.log('The division result is: ' + (result.getText() ));               // simple getText() fn will return promises and print [object Object], hence put inside promise resolution to get correct value
+    //    console.log('The division result is: ' + (result.getText() ));               // simple getText() fn will return promises and print [object Object], hence in order to get correct value we have to resolve that promise
        
        await result.getText().then( (value) => {
            console.log('The division result is: ' + value);
@@ -37,8 +37,8 @@ describe('print & verify a result', () =>{
     } );
     
    // TC3: verifying the result using expect
-   it('verifying the result', async function() {
-        await expect(result.getText() ).toEqual(4);
+   it('verifying the result',  function() {
+         expect(result.getText() ).toEqual(4);
         // browser.sleep(6000);
    } );
 
