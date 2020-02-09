@@ -4,7 +4,7 @@
     specs: ['spec1.js']
   }; */
 
-  // An example configuration file, whicb doesn't need selenium server to be up & running and takes chrome browser by default
+  // An example configuration file, directConnect: true doesn't need need selenium server to be up & running and takes chrome browser by default
 exports.config = {
   directConnect: true,
 
@@ -13,12 +13,20 @@ exports.config = {
     'browserName': 'chrome'
   },
 
+  // incase need to another browser store in an object named multiCapabilities like below
+  // multiCapabilities: [
+  //   {browserName: 'firefox'}, 
+  //   {browserName: 'chrome'}
+  // ]
+
   // Framework to use. Jasmine is recommended.
   framework: 'jasmine',
 
   // Spec patterns are relative to the current working directory when
   // protractor is called.
-  specs: ['specs/*spec_Ex2.js'],
+  // specs: ['specs/*spec_Ex1.js'],
+  specs: ['./specs/print_in_Console_&_verifyResult.js'],
+
 
   // Options to be passed to Jasmine.
   jasmineNodeOpts: {
@@ -28,4 +36,4 @@ exports.config = {
   onPrepare: () => {
     browser.manage().window().maximize(); // maximize the browser before executing the feature files
   }
-};
+};          // ending exports.config

@@ -1,0 +1,78 @@
+1- beforeEach and beforeAll difference in Jasmine framework:
+
+beforeEach() function is called before each spec (it block) i.e, code written inside beforeEach runs before every it block whereas,
+
+beforeAll() function is called only once before all the specs (it block) inside the describe function() level are executed.
+
+
+2- Console commands: in order to check Angular version for a site
+
+a>> For Angular.js or Angular1:
+----------------------------------------------------
+angular.version.full 			(run on websites like:::: https://juliemr.github.io/protractor-demo/; https://angularjs.org/)
+
+
+b>> From Angular2 onwards:
+----------------------------------------------------
+getAllAngularRootElements()[0].attributes["ng-version"]		(run on websites like:::: https://www.mobikwik.com/)
+
+Note: I have tested and both works.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
