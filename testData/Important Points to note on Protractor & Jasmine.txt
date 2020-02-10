@@ -19,6 +19,63 @@ getAllAngularRootElements()[0].attributes["ng-version"]		(run on websites like::
 Note: I have tested and both works.
 
 
+3- How to run ONLY 1 particular it block and ignore the rest??
+Ans: Incase we have 20 it blocks in your spec file, but want to run only a particular it block. It's a Very Big NO and not feasible for prefixing all the 19 it blocks with x (i.e, xit)
+
+Run any particular 'it block' by prefixing it with f (i.e, fit)
+describe('Protractor Typescript Demo', function() {
+
+	fit('click operation', function() {
+		console.log("Iam the only one who will run");
+	});
+
+	it('ignore test 1', function() {
+		console.log("they have not prefixed me with f");
+	});
+
+	it('ignore test 2', function() {
+		console.log("they have not prefixed me with f");
+	});
+
+4- How to prevent a particular it block from running??
+Ans: To disable the test case, we have to make the it block as xit block in jasmine.
+
+5- How to block a partciular spec from running??
+Ans: This can be done by excluding the spec from array, see below point. 
+
+6- How to run all all specs sequentially??
+Ans: use suites
+suites : {
+    login: 'tests/login/*.spec.js,
+}
+You can also specify this as an array:
+
+suites : {
+    mySuite: [
+        'test1.spec.js',
+        'test2.spec.js'
+    ]
+}
+
+A test suite is a collection of specs/testcases united by a common property, logic. For instance, you may have suites for different types of functionality of your application, homepage, search etc:
+
+suites: {
+  homepage: 'tests/e2e/homepage/**/*Spec.js',
+  search: [
+    'tests/e2e/contact_search/**/*Spec.js',
+    'tests/e2e/venue_search/**/*Spec.js'
+  ] 
+},
+And/or, you may have specs grouped into suites by the type of tests:
+
+suites: {
+  smoke: 'tests/e2e/smoke/*.js',
+  performance: 'tests/e2e/performance/*.js'
+},
+Or, you may put all of your "regression" tests into a separate suite. Or, you can apply your own logic to group specs.
+
+
+7- 
 
 
 

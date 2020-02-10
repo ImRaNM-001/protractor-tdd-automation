@@ -25,8 +25,15 @@ exports.config = {
   // Spec patterns are relative to the current working directory when
   // protractor is called.
   // specs: ['specs/*spec_Ex1.js'],
-  specs: ['./specs/print_in_Console_&_verifyResult.js'],
+  // specs: ['./specs/print_in_Console_&_verifyResult.js'],
 
+  // to run all specs
+  // specs: ['specs/*'],
+// to run selected specs as below
+specs: ['specs/ignoringSynchronization.js',
+'specs/exploring_AngularLocators.js',
+'specs/print_in_Console_&_verifyResult.js'
+],
 
   // Options to be passed to Jasmine.
   jasmineNodeOpts: {

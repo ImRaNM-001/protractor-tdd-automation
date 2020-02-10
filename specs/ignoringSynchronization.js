@@ -21,13 +21,13 @@ describe('test to open a webPage', ()=>{
     } );
 
     // TC3
-    it('open Non-Angular page by ignoring Synchronization', ()=>{
+    xit('open Non-Angular page by ignoring Synchronization', ()=>{
         browser.ignoreSynchronization = true;
         browser.get('https://www.youtube.com');                  // passes spec without driver instance since Synchronization is set as true
     } );
 
     // TC4
-    it('open Non-Angular page by setting waitforAngular as false', ()=>{
+    xit('open Non-Angular page by setting waitforAngular as false', ()=>{
         browser.waitForAngularEnabled(false);
         browser.get('https://www.youtube.com');                  // spec is passed without driver instance since waitForAngularEnabled is set as false
     } );
