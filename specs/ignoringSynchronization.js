@@ -7,6 +7,7 @@
 
 // trying with fat arrow function
 describe('test to open a webPage', ()=>{
+    
     // TC1
     it('open Non-Angular page without waiting for angular', ()=>{
         // browser.get('https://www.youtube.com');          // this line of code will show failure spec unless application is angular, hence use browser.dirver.get
@@ -50,8 +51,6 @@ onPrepare: function () {
 // Technique 3: In some occasions, to avoid errors need to add both values..........
  browser.driver.ignoreSynchronization = true;
  browser.waitForAngularEnabled(false); 
-
-
 
 */
 

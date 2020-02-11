@@ -75,7 +75,13 @@ suites: {
 Or, you may put all of your "regression" tests into a separate suite. Or, you can apply your own logic to group specs.
 
 
-7- 
+7- Install command for protractor screenshot reporter for Jasmine2:
+npm install protractor-jasmine2-screenshot-reporter --save-dev
+
+[site url: https://www.npmjs.com/package/protractor-jasmine2-screenshot-reporter]
+[Raghav video: https://www.youtube.com/watch?v=EX0SmoUfdQ4&t=321s]
+
+8- 
 
 
 

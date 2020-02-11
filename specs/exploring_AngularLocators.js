@@ -1,14 +1,11 @@
 describe('exploring Angular Locators', () =>{
-
-    let result;
-
-    beforeAll( () =>{
-        browser.waitForAngularEnabled(false);
-    } );
+    const eC = protractor.ExpectedConditions;
+    // beforeAll( () =>{
+    //     browser.waitForAngularEnabled(false);
+    // } );
 
     beforeEach( () =>{
         browser.get('https://juliemr.github.io/protractor-demo/');    
-        result = element(by.className('ng-binding') );
     } );   
 
     // TC1: identifying locators and performing the multiplication operation
@@ -23,6 +20,8 @@ describe('exploring Angular Locators', () =>{
         secondNo.sendKeys(2);
         goButton.click();
         
-        browser.sleep(3000);
+        // browser.sleep(3000);                 // instead of using sleep i wrote explicit wait code below.
+        browser.wait(eC.presenceOf(element(by.className('ng-binding'))), 4000);
+
     } );
 } );

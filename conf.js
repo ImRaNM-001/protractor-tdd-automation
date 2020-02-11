@@ -10,10 +10,15 @@ exports.config = {
 
   // Capabilities to be passed to the webdriver instance.
   capabilities: {
-    'browserName': 'chrome'
+    browserName: 'chrome',
+    chrommeOptions: {
+      // args: ["--headless", "--disable-gpu", "--window-size=800x600"]
+      args: ['--headless']
+    }
   },
 
-  // incase need to another browser store in an object named multiCapabilities like below
+  // incase need to another browser store in an object named multiCapabilities like below:
+
   // multiCapabilities: [
   //   {browserName: 'firefox'}, 
   //   {browserName: 'chrome'}
@@ -22,18 +27,19 @@ exports.config = {
   // Framework to use. Jasmine is recommended.
   framework: 'jasmine',
 
-  // Spec patterns are relative to the current working directory when
-  // protractor is called.
-  // specs: ['specs/*spec_Ex1.js'],
-  // specs: ['./specs/print_in_Console_&_verifyResult.js'],
+  // Spec patterns are relative to the current working directory when protractor is called.
 
-  // to run all specs
+  // specs: ['specs/*spec_Ex1.js'],
+  specs: ['./specs/multipleScenarios.js'],
+
+  // to run all specs 1 after 1 (non sequentially):
   // specs: ['specs/*'],
-// to run selected specs as below
-specs: ['specs/ignoringSynchronization.js',
-'specs/exploring_AngularLocators.js',
-'specs/print_in_Console_&_verifyResult.js'
-],
+
+  // to run selected specs (in sequence):
+// specs: ['specs/ignoringSynchronization.js',
+// 'specs/exploring_AngularLocators.js',
+// 'specs/print_in_Console_&_verifyResult.js'
+// ],
 
   // Options to be passed to Jasmine.
   jasmineNodeOpts: {
@@ -43,4 +49,4 @@ specs: ['specs/ignoringSynchronization.js',
   onPrepare: () => {
     browser.manage().window().maximize(); // maximize the browser before executing the feature files
   }
-};          // ending exports.config
+};                                          // ending exports.config
