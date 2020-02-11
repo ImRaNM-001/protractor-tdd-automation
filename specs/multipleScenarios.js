@@ -10,15 +10,16 @@ describe('writing multiple scenarios', () =>{
 
 
     // TC1: Verfiy Tooltip
-    it('verify tooltip', () =>{
-        element(by.className('nocode code-annotation')).getAttribute('title').then( (tooltipText) =>{
+    fit('verify tooltip', () =>{
+        element(by.className('nocode code-annotation') ).getAttribute("title").then( (tooltipText) =>{
             console.log(tooltipText);
         } );
     } );
 
-// TC2: Get typed value from a textbox
+// TC2: Get typed value from a textbox (done)
 it('fetch value from textbox', () =>{
     const nameField = element(by.model('yourName') );
+    nameField.sendKeys('I am Bond');
     nameField.getAttribute('value').then( (text)=>{
         console.log(text);
     });
@@ -35,7 +36,7 @@ it('perform a simple drag and drop', () =>{
 
 // TC4: perform right click
 it('perform a right click/ context click', () =>{
-
+    const developLink = $('[]')
 
 } );
 
@@ -46,11 +47,10 @@ it('explicitly waiting for an element', () =>{
 
 } );
 
-// TC6: Get URL of a page.
+// TC6: Get URL of a page (done)
 it('get url of the current page', () =>{
     browser.getCurrentUrl().then( (url) =>{
-        console.log(url);
-    
+        console.log(url);    
     } );
 } );
 
