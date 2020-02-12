@@ -11,7 +11,7 @@ describe('writing multiple scenarios', () =>{
 
     // TC1: Verfiy Tooltip
     fit('verify tooltip', () =>{
-        element(by.className('nocode code-annotation') ).getAttribute("title").then( (tooltipText) =>{
+        element(by.cssContainingText('.nocode.code-annotation', 'me') ).getAttribute("title").then( (tooltipText) =>{
             console.log(tooltipText);
         } );
     } );
@@ -54,9 +54,14 @@ it('get url of the current page', () =>{
     } );
 } );
 
-// TC7: Explore WebElement
+// TC7: Explore WebElement (partially done, returns long )
 it('exploring webElement', () =>{
-    element(by.id('..some id...')).getWebElement();
+    // element(by.xpath('//h3[text()="Why AngularJS?"]')).getWebElement();              // need to resolve the promise, hence follow next line
+    // element(by.xpath('//h3[text()="Why AngularJS?"]')).getWebElement().then( (element) =>{
+        element(by.cssContainingText('.text-display-1', 'Why AngularJS?')).getWebElement().then( (element) =>{
+    console.log(element);
+    
+    });
 
 
 } );
