@@ -81,7 +81,11 @@ npm install protractor-jasmine2-screenshot-reporter --save-dev
 [site url: https://www.npmjs.com/package/protractor-jasmine2-screenshot-reporter]
 [Raghav video: https://www.youtube.com/watch?v=EX0SmoUfdQ4&t=321s]
 
-8- 
+8- Why in protractor we have to resolve in promise? (Googled Qs.)
+(Googled Ans.): Almost all Protractor functions work in this manner – returning a promise that resolves after an indeterminate amount of time, and upon resolving, triggering a function to handle the result.
+
+9- 
+
 
 
 

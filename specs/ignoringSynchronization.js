@@ -6,10 +6,10 @@
 }); */
 
 // trying with fat arrow function
-describe('test to open a webPage', ()=>{
+describe('test to open a webPage', () => {
     
     // TC1
-    it('open Non-Angular page without waiting for angular', ()=>{
+    it('open Non-Angular page without waiting for angular', () => {
         // browser.get('https://www.youtube.com');          // this line of code will show failure spec unless application is angular, hence use browser.dirver.get
 
         browser.driver.get('https://www.youtube.com');       // this line of code will not fail the test        
@@ -17,18 +17,18 @@ describe('test to open a webPage', ()=>{
     } );
 
     // // TC2
-    it('open Angular page and waiting for angular', ()=>{
+    it('open Angular page and waiting for angular', () => {
         browser.get('https://angularjs.org/');                  // passes spec without driver instance since application is PURE angular
     } );
 
     // TC3
-    xit('open Non-Angular page by ignoring Synchronization', ()=>{
+    xit('open Non-Angular page by ignoring Synchronization', () => {
         browser.ignoreSynchronization = true;
         browser.get('https://www.youtube.com');                  // passes spec without driver instance since Synchronization is set as true
     } );
 
     // TC4
-    xit('open Non-Angular page by setting waitforAngular as false', ()=>{
+    xit('open Non-Angular page by setting waitforAngular as false', () => {
         browser.waitForAngularEnabled(false);
         browser.get('https://www.youtube.com');                  // spec is passed without driver instance since waitForAngularEnabled is set as false
     } );

@@ -1,15 +1,15 @@
-describe('exploring Angular Locators', () =>{
+describe('exploring Angular Locators', () => {
     const eC = protractor.ExpectedConditions;
     // beforeAll( () =>{
     //     browser.waitForAngularEnabled(false);
     // } );
 
-    beforeEach( () =>{
+    beforeEach( () => {
         browser.get('https://juliemr.github.io/protractor-demo/');    
     } );   
 
     // TC1: identifying locators and performing the multiplication operation
-    it('perform multiplication of two numbers', () =>{
+    it('perform multiplication of two numbers', () => {
         const firstNo = element(by.model('first') );
         const mulOperator = element(by.model('operator') ).$('[value="MULTIPLICATION"]' );           // selecting value inside model operator using $
         const secondNo = element(by.model('second') );

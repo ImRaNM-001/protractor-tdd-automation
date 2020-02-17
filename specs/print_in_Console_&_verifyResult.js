@@ -33,7 +33,7 @@ describe('print & verify a result', () => {
 
 
         // hence in order to get correct value we have to resolve that promise
-        result.getText().then((value) => {
+        result.getText().then( (value) => {
             console.log('The division result is: ' + value);
         });
 
