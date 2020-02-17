@@ -27,6 +27,7 @@ class Blazemeter_HomePage{
     get useCasesElements(){
         // return $$ ('div#main_b_footer_second_block>ul>li');              // all 4 work fine but i prefer the last one, hence not commented
         // return (element.all(by.css('div#main_b_footer_second_block>ul>li')) );
+        
         // return element(by.css('#main_b_footer_second_block')).$$('li') ;            // tested and works fine without () after return keyword
         return  $('#main_b_footer_second_block').$$('li');
     }
