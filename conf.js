@@ -13,7 +13,7 @@ exports.config = {
     browserName: 'chrome',
     chrommeOptions: {
       // args: ["--headless", "--disable-gpu", "--window-size=800x600"]
-      args: ['--headless']
+      args: ["--headless"]
     }
   },
 
@@ -30,7 +30,7 @@ exports.config = {
   // Spec patterns are relative to the current working directory when protractor is called.
 
   // specs: ['specs/*spec_Ex1.js'],
-  specs: ['./specs/freshworks_getHeaderValue.js'],
+  specs: ['./specs/internet_heroHomeSpec.js'],
 
   // to run all specs 1 after 1 (non sequentially):
   // specs: ['specs/*'],

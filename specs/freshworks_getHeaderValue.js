@@ -4,15 +4,20 @@ describe('interaction with freshworks web element', () => {
             browser.waitForAngularEnabled(false);    
         } )
 
+    // TC1
     it('get header value', ()=>{
         browser.get('https://www.freshworks.com/');
         const header = $('h1');
 
         // const text = header.getText();
-        // console.log('The fetched text is: ' + text);                // will not work/get the desired text in protractor unlike WDIO (shown in Naveen video: WebDriverIO - Write Your First Script | Element APIs | click, sendKeys and getText - Part -3), hence resolve as promise
-        console.log(header.getText() );
-        // header.getText().then( (textToPrint) => {
-        // console.log(textToPrint);
-        // } );
-    } );
-} );
+        // console.log('The fetched text is: ' + text);                // will not work/get the desired text in protractor unlike WDIO (shown in Naveen video: WebDriverIO - Write Your First Script | Element APIs | click, sendKeys and getText - Part -3), hence resolve as promise.        
+
+        header.getText().then(textToPrint => {
+        console.log('The text extracted from webpage is: '+ textToPrint);
+        browser.sleep(3000);
+        } );
+
+    } );                    // closing it block with ;
+
+
+} );                       // closing describe block with ;

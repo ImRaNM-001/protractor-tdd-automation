@@ -6,18 +6,22 @@ describe('home page elements handle', () => {
         browser.waitForAngularEnabled(false);    
     } )
 
+    // TC1
     it('verify home page elements', () => {
         browser.get('https://www.freshworks.com/');
 
-        freshworks_HomePage.pageHeader.getText().then( (textToPrint) => {
-            console.log(textToPrint);      
+        freshworks_HomePage.pageHeader.getText().then(textToPrint => {
+            console.log('The main header text is: '+ textToPrint);      
         } );
 
-        freshworks_HomePage.subHeader.getText().then( (textToPrint) => {
-            console.log(textToPrint);      
+        freshworks_HomePage.subHeader.getText().then(textToPrint => {
+            console.log('The sub header text is: ' + textToPrint);      
         } );
 
         freshworks_HomePage.supportLink.click();
-        browser.pause(5000);
+        browser.sleep(3000);
+
     } );
+
+
 } );

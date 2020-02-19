@@ -30,14 +30,15 @@ describe('print & verify a result', () => {
         browser.sleep(3000);
 
         //    console.log('The division result is: ' + (result.getText() ));      // simple getText() fn will return promises and print [object Object],
-
-
+        
         // hence in order to get correct value we have to resolve that promise
-        result.getText().then( (value) => {
+        result.getText().then(value => {
             console.log('The division result is: ' + value);
-        });
+        } );
+        expect(result.getText() ).toEqual('4');
 
-        expect(result.getText()).toEqual('4');
-    });
+    } );
     // console.log('The division result is: ' + result.getAttribute('value') );
-});
+
+
+} );

@@ -1,6 +1,6 @@
 describe('writing multiple scenarios', () => {
     
-    // beforeAll( () =>{
+    // beforeAll( () => {
     //     browser.waitForAngularEnabled(false);    
     // } );
     
@@ -32,7 +32,7 @@ describe('writing multiple scenarios', () => {
     it('fetch value from textbox', () => {
         const nameField = element(by.model('yourName') );
         nameField.sendKeys('I am Bond');
-        nameField.getAttribute('value').then( (text) => {
+        nameField.getAttribute('value').then(text => {
             console.log(text);
         } );
     } );
@@ -61,7 +61,7 @@ describe('writing multiple scenarios', () => {
 
     // TC6: Get URL of a page (done)
     it('get url of the current page', () => {
-        browser.getCurrentUrl().then( (url) => {
+        browser.getCurrentUrl().then(url => {
             console.log(url);    
         } );
     } );
@@ -72,9 +72,12 @@ describe('writing multiple scenarios', () => {
         // $('//h3[text()="Why AngularJS?"]').getWebElement().then( (element) => {             // $ and xpath combination may not work
             // console.log(element);        
         // } );
-            element(by.cssContainingText('.text-display-1', 'Why AngularJS?')).getWebElement().then( (element) => {
+            element(by.cssContainingText('.text-display-1', 'Why AngularJS?')).getWebElement().then(element => {
         console.log(element);        
-        } );
+        } );                                // closing promise started with then fn()
+  
     } );                                                // closing TC7 it block
+
+
 
 } );                            // closing main describe block
