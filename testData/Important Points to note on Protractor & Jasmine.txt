@@ -9,12 +9,16 @@ beforeAll() function is called only once before all the specs (it block) inside 
 
 a>> For Angular.js or Angular1:
 ----------------------------------------------------
-angular.version.full 			(run on websites like:::: https://juliemr.github.io/protractor-demo/; https://angularjs.org/)
+angular.version.full 			(run on websites like:::: 
+
+https://juliemr.github.io/protractor-demo/	built on 1.3.0;
+https://angularjs.org/	built on 1.7.9;
+https://www.jiocinema.com/	built on 1.6.1)
 
 
 b>> From Angular2 onwards:
 ----------------------------------------------------
-getAllAngularRootElements()[0].attributes["ng-version"]		(run on websites like:::: https://www.mobikwik.com/)
+getAllAngularRootElements()[0].attributes['ng-version']		(run on websites like:::: https://www.mobikwik.com/	which is built on ng-version="6.1.0")
 
 Note: I have tested and both works.
 

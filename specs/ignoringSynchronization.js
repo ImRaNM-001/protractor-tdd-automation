@@ -2,8 +2,8 @@
 /* describe('testing to hit a webPage', function(){
     it('open youtube homePage', function(){
         browser.get('http://www.youtube.com');
-    });
-}); */
+    } );
+} ); */
 
 // trying with fat arrow function
 describe('test to open a webPage', () => {
@@ -17,8 +17,11 @@ describe('test to open a webPage', () => {
     } );
 
     // // TC2
-    it('open Angular page and waiting for angular', () => {
+    fit('open Angular page and waiting for angular', () => {
         browser.get('https://angularjs.org/');                  // passes spec without driver instance since application is PURE angular
+        element(by.linkText('angular.io') ).click();            // exploring and testing by.linkText locator of selenium
+        // element(by.partialLinkText('.io') ).click();     // exploring and testing by.partialLinkText locator of selenium
+        browser.sleep(3000);
     } );
 
     // TC3
@@ -32,8 +35,9 @@ describe('test to open a webPage', () => {
         browser.waitForAngularEnabled(false);
         browser.get('https://www.youtube.com');                  // spec is passed without driver instance since waitForAngularEnabled is set as false
     } );
-} );
 
+
+} );                        // closing describe fn()
 
 
 

@@ -30,7 +30,7 @@ exports.config = {
   // Spec patterns are relative to the current working directory when protractor is called.
 
   // specs: ['specs/*spec_Ex1.js'],
-  specs: ['./specs/internet_heroHomeSpec.js'],
+  specs: ['./specs/ignoringSynchronization.js'],
 
   // to run all specs 1 after 1 (non sequentially):
   // specs: ['specs/*'],
@@ -48,5 +48,10 @@ exports.config = {
 
   onPrepare: () => {
     browser.manage().window().maximize(); // maximize the browser before executing the feature files
+    // browser.manage().timeouts().implicitlyWait(3000);
+    // browser.manage().timeouts().setScriptTimeout(3000);
   }
+
+
+
 };                                          // ending exports.config

@@ -19,6 +19,8 @@ describe('print & verify a result', () => {
 
         const firstNo = element(by.model('first'));
         const divOperator = element(by.model('operator')).$('[value="DIVISION"]');           // selecting value inside model operator using $
+        // const divOperator = element.all(by.tagName('option') ).get(1);    // will try in future hence noted here
+
         const secondNo = element(by.model('second'));
         const goButton = $('[ng-click="doAddition()"]');            // using $ to store css
 
