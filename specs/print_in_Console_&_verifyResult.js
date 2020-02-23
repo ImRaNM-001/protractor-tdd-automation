@@ -2,11 +2,11 @@ describe('print & verify a result', () => {
 
     let result;
 
-    beforeAll(() => {
+    beforeAll( () => {
         browser.waitForAngularEnabled(false);
     });
 
-    beforeEach(() => {
+    beforeEach( () => {
         browser.get('https://juliemr.github.io/protractor-demo/');
         result = element(by.className('ng-binding'));
 

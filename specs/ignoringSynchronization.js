@@ -10,7 +10,7 @@ describe('test to open a webPage', () => {
     
     // TC1
     it('open Non-Angular page without waiting for angular', () => {
-        // browser.get('https://www.youtube.com');          // this line of code will show failure spec unless application is angular, hence use browser.dirver.get
+        // browser.get('https://www.youtube.com');          // this line of code will show failure spec unless application is angular, hence use browser.driver.get
 
         browser.driver.get('https://www.youtube.com');       // this line of code will not fail the test        
         // browser.manage().window().maximize();             // added in conf.js inside onPrepare function (), hence commented here  
@@ -42,17 +42,18 @@ describe('test to open a webPage', () => {
 
 
 /* Other ways to do it:
+
 // Technique 1: add the below snippet in your .js spec file......
-beforeAll(function() {
+beforeAll( () => {
     browser.waitForAngularEnabled(false);
 } );
 
 // Technique 2: Add the following piece of code in the conf.js file.....
-onPrepare: function () {
+onPrepare: () => {
        browser.ignoreSynchronization = true;      
    }
 
-// Technique 3: In some occasions, to avoid errors need to add both values..........
+// Technique 3: In some occasions, to avoid errors need to add both values..
  browser.driver.ignoreSynchronization = true;
  browser.waitForAngularEnabled(false); 
 

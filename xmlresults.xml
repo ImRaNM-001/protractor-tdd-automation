@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites disabled="0" errors="0" failures="0" tests="1" time="10.341">
+ <testsuite name="home page elements handle" timestamp="2020-02-23T18:45:43" hostname="localhost" time="10.341" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="home page elements handle" name="verify home page elements" time="9.146" />
+ </testsuite>
+</testsuites>
