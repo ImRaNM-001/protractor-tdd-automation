@@ -4,10 +4,10 @@
     specs: ['spec1.js']
   }; */
 
-// 2. code for taking screenshots at failed specs post npm install protractor-jasmine2-screenshot-reporter --save-dev
+// 2. inserting code for taking screenshots at failed specs only post npm install protractor-jasmine2-screenshot-reporter --save-dev
 // const HtmlScreenshotReporter = require('protractor-jasmine2-screenshot-reporter');
 // const reporter = new HtmlScreenshotReporter({
-//   dest: 'screenshots',             // i trimmed the folder name from 'target/screenshots' to 'screenshots' only for my convenience
+//   dest: 'screenshots',            // i trimmed the folder name from 'target/screenshots' to 'screenshots' only for my convenience
 //   filename: 'summaryReport.html',       // i renamed the filename from 'my-report.html' to 'summaryReport.html'
 //   captureOnlyFailedSpecs: true
 // } );
@@ -21,8 +21,8 @@ exports.config = {
   capabilities: {
     browserName: 'chrome',
     chrommeOptions: {
-      // args: ["--headless", "--disable-gpu", "--window-size=800x600"]
-      args: ["--headless"]
+      args: ["--headless", "--disable-gpu", "--window-size=800x600"]
+      // args: ["--headless"]
     }
   },
 
@@ -38,7 +38,7 @@ exports.config = {
   // 6. Spec patterns are relative to the current working directory when protractor is called.
 
   // specs: ['specs/*spec_Ex1.js'],
-  specs: ['./specs/freshworks_HomeSpec.js'],
+  specs: ['./specs/internet_heroLoginSpec.js'],
 
   // to run all specs 1 after 1 (non sequentially):
   // specs: ['specs/*'],
@@ -56,12 +56,12 @@ exports.config = {
 
   onPrepare: () => {
     browser.manage().window().maximize();   // maximize the browser before executing the feature files
-    // browser.ignoreSynchronization = true;     // very much required in case of a non-angular application to avoid it being synchronous
+    browser.ignoreSynchronization = true;     // very much required in case of a non-angular application to avoid it being synchronous
      // browser.manage().timeouts().implicitlyWait(3000);
     // browser.manage().timeouts().setScriptTimeout(3000);          // represents webdriver asynchronous timeout
 
     // Assign the test summaryReport to each running instance
-    // jasmine.getEnv().addReporter(reporter);      // won't be added as i would be using Jasmine Allure reporter later
+    // jasmine.getEnv().addReporter(reporter);      // won't be added as i would be using protractor-html-reporter-2
 
     
     // inserted below code to obtain results in xml file for satisfying bottom code new HTMLReport().from('xmlresults.xml', testConfig);
@@ -101,7 +101,8 @@ exports.config = {
   
   
 
-  },                                // ending onPrepare() fn
+  },                                         // closing onPrepare() fn
+
 
   // 8. Setup the summaryReport before any tests start
   // beforeLaunch: () => {
@@ -149,7 +150,8 @@ onComplete: () => {
      new HTMLReport().from('xmlresults.xml', testConfig);
  } );
 
-},                                    // ending onComplete() fn
+
+},                                              // closing onComplete() fn
 
 
 
