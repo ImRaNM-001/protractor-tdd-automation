@@ -23,6 +23,7 @@ getAllAngularRootElements()[0].attributes['ng-version']		(run on websites like::
 
 https://www.mobikwik.com/	which is built on ng-version="6.1.0")
 https://www-us.computershare.com/EmployeePortal/AngHome	which is built on ng-version="6.0.0")
+https://ng-bootstrap.github.io/#/components/tooltip/examples	which is built on ng-version="9.0.1")
 
 Note: I have tested and both works.
 

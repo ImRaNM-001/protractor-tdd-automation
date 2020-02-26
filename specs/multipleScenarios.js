@@ -6,11 +6,11 @@ describe('writing multiple scenarios', () => {
     
     beforeEach( () => {
         browser.get('https://angularjs.org/');
+        // browser.get(browser.params.baseURL);            // works perfectly fine
     } )
 
-
     // TC1: Verfiy Tooltip
-    fit('verify tooltip', () => {
+    it('verify tooltip', () => {
         // element(by.cssContainingText('.nocode.code-annotation', 'me') ).getAttribute("title").then( (tooltipText) => {
         //     console.log(tooltipText);
 
@@ -66,7 +66,15 @@ describe('writing multiple scenarios', () => {
         } );
     } );
 
-    // TC7: Explore WebElement (partially done, returns long )
+    // TC7: Get Title of a page from the webpage window (done)
+    fit('get title from the current window', () => {
+        browser.getTitle().then(title => {
+            console.log(title);    
+        } );
+    } );
+
+
+    // TC8: Explore WebElement (partially done, returns long )
     it('exploring webElement', () => {
         // element(by.xpath('//h3[text()="Why AngularJS?"]')).getWebElement();              // need to resolve the promise, hence follow next line
         // $('//h3[text()="Why AngularJS?"]').getWebElement().then( (element) => {             // $ and xpath combination may not work

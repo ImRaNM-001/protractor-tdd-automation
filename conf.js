@@ -17,12 +17,16 @@
 exports.config = {
   directConnect: true,
 
+  // params: {
+  // baseURL 'https://angularjs.org/',
+  // },
+
   // Capabilities to be passed to the webdriver instance.
   capabilities: {
     browserName: 'chrome',
     chrommeOptions: {
-      args: ["--headless", "--disable-gpu", "--window-size=800x600"]
-      // args: ["--headless"]
+      // args: ["--headless", "--disable-gpu", "--window-size=800x600"]
+      args: ['--headless']
     }
   },
 
@@ -38,7 +42,7 @@ exports.config = {
   // 6. Spec patterns are relative to the current working directory when protractor is called.
 
   // specs: ['specs/*spec_Ex1.js'],
-  specs: ['./specs/internet_heroLoginSpec.js'],
+  specs: ['./specs/spiceJet_actionsSpec.js'],
 
   // to run all specs 1 after 1 (non sequentially):
   // specs: ['specs/*'],
