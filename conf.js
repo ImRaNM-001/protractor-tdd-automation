@@ -1,48 +1,43 @@
-// 1. below code is required if we need to keep selenium server up & running always but i commented it intentionally
-/* exports.config = {
-    seleniumAddress: 'http://localhost:4444/wd/hub',
-    specs: ['spec1.js']
-  }; */
+ // inserting code above exports.config = { for taking screenshots at failed specs only (not required as i am using protractor-html-reporter-2)
 
-// 2. inserting code for taking screenshots at failed specs only post npm install protractor-jasmine2-screenshot-reporter --save-dev
-// const HtmlScreenshotReporter = require('protractor-jasmine2-screenshot-reporter');
-// const reporter = new HtmlScreenshotReporter({
-//   dest: 'screenshots',            // i trimmed the folder name from 'target/screenshots' to 'screenshots' only for my convenience
-//   filename: 'summaryReport.html',       // i renamed the filename from 'my-report.html' to 'summaryReport.html'
-//   captureOnlyFailedSpecs: true
-// } );
-  
-  
-// 3. An example configuration file, directConnect: true doesn't need need selenium server to be up & running and takes chrome browser by default
+    // const HtmlScreenshotReporter = require('protractor-jasmine2-screenshot-reporter');
+    // const reporter = new HtmlScreenshotReporter({
+    //   dest: 'screenshots',            // i trimmed the folder name from 'target/screenshots' to 'screenshots' only for my convenience
+    //   filename: 'summaryReport.html',       // i renamed the filename from 'my-report.html' to 'summaryReport.html'
+    //   captureOnlyFailedSpecs: true
+    // } );
+
 exports.config = {
+  // seleniumAddress: 'http://localhost:4444/wd/hub',   (// this code is required if we need to keep selenium server up & running always but i commented it intentionally)
+
   directConnect: true,
 
   // params: {
   // baseURL 'https://angularjs.org/',
   // },
 
-  // Capabilities to be passed to the webdriver instance.
+  // 1. Capabilities to be passed to the webdriver instance.
   capabilities: {
     browserName: 'chrome',
     chrommeOptions: {
-      // args: ["--headless", "--disable-gpu", "--window-size=800x600"]
-      args: ['--headless']
+      args: ['--headless', '--disable-gpu', '--window-size=800x600']
+      // args: ['--headless']
     }
   },
 
-  // 4. incase need to another browser store in an object named multiCapabilities like below:
+  // 2. Incase need to store another browser in an object named multiCapabilities like below:
   // multiCapabilities: [
   //   {browserName: 'firefox'}, 
   //   {browserName: 'chrome'}
   // ]
 
-  // 5. Framework to use. Jasmine is recommended.
+  // 3. Framework to use. Jasmine is recommended.
   framework: 'jasmine',
 
-  // 6. Spec patterns are relative to the current working directory when protractor is called.
+  // 4. Spec patterns are relative to the current working directory when protractor is called.
 
   // specs: ['specs/*spec_Ex1.js'],
-  specs: ['./specs/spiceJet_actionsSpec.js'],
+  specs: ['./specs/sendData_fromExcel.js'],
 
   // to run all specs 1 after 1 (non sequentially):
   // specs: ['specs/*'],
@@ -53,16 +48,16 @@ exports.config = {
 // 'specs/print_in_Console_&_verifyResult.js'
 // ],
 
-  // 7. Options to be passed to Jasmine (i.e, declaring spec timeout).
+  // 5. Options to be passed to Jasmine (i.e, declaring spec timeout).
   jasmineNodeOpts: {
     defaultTimeoutInterval: 30000
   },
 
   onPrepare: () => {
-    browser.manage().window().maximize();   // maximize the browser before executing the feature files
+    browser.manage().window().maximize();     // maximize the browser before executing the feature files
     browser.ignoreSynchronization = true;     // very much required in case of a non-angular application to avoid it being synchronous
      // browser.manage().timeouts().implicitlyWait(3000);
-    // browser.manage().timeouts().setScriptTimeout(3000);          // represents webdriver asynchronous timeout
+    // browser.manage().timeouts().setScriptTimeout(3000);          // represents webdriverJS asynchronous timeout
 
     // Assign the test summaryReport to each running instance
     // jasmine.getEnv().addReporter(reporter);      // won't be added as i would be using protractor-html-reporter-2
@@ -76,8 +71,6 @@ exports.config = {
         filePrefix: 'xmlresults'
       } )
     );
-
-
 
 
     // inserted below code to take screenshot while using protractor-html-reporter-2
@@ -108,7 +101,7 @@ exports.config = {
   },                                         // closing onPrepare() fn
 
 
-  // 8. Setup the summaryReport before any tests start
+  // 6. Setup the summaryReport before any tests start
   // beforeLaunch: () => {
   //   return new Promise(resolve => {
   //     reporter.beforeLaunch(resolve);
@@ -118,7 +111,7 @@ exports.config = {
 
 
   
-  // 9. Close the summaryReport after all tests finish
+  // 7. Close the summaryReport after all tests finish
   // afterLaunch: (exitCode => {
   //   return new Promise(resolve =>{
   //     reporter.afterLaunch(resolve.bind(this, exitCode) );
@@ -127,35 +120,35 @@ exports.config = {
 
 
 
-  // 10. HTMLReport called once tests are finished
-onComplete: () => {
-  let browserName, browserVersion;
-  const capsPromise = browser.getCapabilities();
+  // 8. Calling HTMLReport once tests are finished
+  onComplete: () => {
+    let browserName, browserVersion;
+    const capsPromise = browser.getCapabilities();
 
-  capsPromise.then(caps => {
-     browserName = caps.get('browserName');
-     browserVersion = caps.get('version');
-     platform = caps.get('platform');
+    capsPromise.then(caps => {
+      browserName = caps.get('browserName');
+      browserVersion = caps.get('version');
+      platform = caps.get('platform');
 
-     const HTMLReport = require('C:/Users/imz_x/AppData/Roaming/npm/node_modules/protractor-html-reporter-2');
+      const HTMLReport = require('C:/Users/imz_x/AppData/Roaming/npm/node_modules/protractor-html-reporter-2');
 
-     testConfig = {
-         reportTitle: 'Protractor Test Execution Report',
-         outputPath: './',
-         outputFilename: 'ProtractorTestReport',
-         screenshotPath: './screenshots',
-         testBrowser: browserName,
-         browserVersion: browserVersion,
-         modifiedSuiteName: false,
-         screenshotsOnlyOnFailure: true,
-         testPlatform: platform
-     };
+      testConfig = {
+          reportTitle: 'Protractor Test Execution Report',
+          outputPath: './',
+          outputFilename: 'ProtractorTestReport',
+          screenshotPath: './screenshots',
+          testBrowser: browserName,
+          browserVersion: browserVersion,
+          modifiedSuiteName: false,
+          screenshotsOnlyOnFailure: true,
+          testPlatform: platform
+      };
 
-     new HTMLReport().from('xmlresults.xml', testConfig);
- } );
+        new HTMLReport().from('xmlresults.xml', testConfig);
+    } );
 
 
-},                                              // closing onComplete() fn
+  },                                              // closing onComplete() fn
 
 
 

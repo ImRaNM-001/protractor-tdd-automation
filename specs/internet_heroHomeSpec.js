@@ -41,9 +41,10 @@ const internet_heroHomePage = require ('../pages/internet_heroHomePage');
         it('validate page url', () => {
             browser.get('https://the-internet.herokuapp.com');
             browser.getCurrentUrl().then(url => {
-                expect(browser.getCurrentUrl() ).toEqual('https://the-internet.herokuapp.com');
+                console.log(url);                
                 // expect(browser.getCurrentUrl() ).toEqual(`${browser.options.baseUrl}`);      // taken from Naveen's WDIO video: part-8
            } );
+           expect(browser.getCurrentUrl() ).toEqual('https://the-internet.herokuapp.com');
         } );
             
 
@@ -55,11 +56,12 @@ const internet_heroHomePage = require ('../pages/internet_heroHomePage');
                 if(result === true){
                     const t1 = internet_heroHomePage.h3Header.getText();
                     t1.then(text => {
-                        expect(t1.toEqual('Checkboxes') );
+                        console.log(text);                      // should print 'Checkboxes'
                     } )
-                }
-            } )
-        );       
+                    expect(t1.toEqual('Checkboxes') );
+                    }                  // closing 2nd if block
+                } )                     // closing .then fn
+            );                      // closing 1st if block
         } );
 
 
@@ -75,8 +77,6 @@ const internet_heroHomePage = require ('../pages/internet_heroHomePage');
         } );
 
 
-
-        
     } );
 
 

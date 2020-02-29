@@ -81,10 +81,13 @@ npm i -g jasmine-reporters
 15- (For file uploads, need to install path library). Install command for path (which is an exact copy of the NodeJS ’path’ module published to the NPM registry)
 npm i -g path
 
+16- Install command for xlsx (library for reading data from excel sheet)
+npm i -g xlsx
 
+17- Install command for log4js (library for taking output of log statements)
+npm i -g log4js
 
-
-
+18- 
 
 
 
