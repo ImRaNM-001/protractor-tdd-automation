@@ -93,9 +93,19 @@ Or, you may put all of your "regression" tests into a separate suite. Or, you ca
 8- Require vs Import:
 The major difference between require and import , is that require will automatically scan node_modules folder to find modules, but import (which comes from ES6) won't.
 
-9- 
+9- browser.get() : It's used to go to the particular website , But it doesn't maintain the browser History and cookies so , we can't use forward and backward button , if we click on that , page will not get schedule. 
 
+browser.navigate() : it's used to go to the particular website , but it maintains the browser history and cookies, so we can use forward and backward button to navigate between the pages during the coding of Testcase.
 
+10- Inheritance (in framework explained)- We create a Base Class in our automation Framework to initialize WebDriver interface, waits, loggers, reports etc. and when we extend this Base Class in other classes such as Tests and Utility Class.
+
+11- Below ways (npm libraries) to read data from excel:
+xlsx
+excel-js
+jasmine-data-provider
+convert-excel-to-json
+
+12- 
 
 
 
