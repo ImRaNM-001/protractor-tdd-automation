@@ -1,4 +1,4 @@
-const xlReader = require('../utilities/xlReader');
+const xlReader = require('../utils/xlReader');
 // import XlReader from './utilities/xlReader';
 
 describe('reading data from an excel file', () =>{
