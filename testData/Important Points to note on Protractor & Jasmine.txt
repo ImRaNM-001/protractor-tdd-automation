@@ -67,7 +67,7 @@ suites : {
 
 	}
 
-command to run the particular test:	protractor conf.js --smoke
+command to run the particular test:	protractor conf.js --suite smoke
 
 A test suite is a collection of specs/testcases united by a common property, logic. For instance, you may have suites for different types of functionality of your application, homepage, search etc:
 
@@ -97,15 +97,13 @@ The major difference between require and import , is that require will automatic
 
 browser.navigate() : it's used to go to the particular website , but it maintains the browser history and cookies, so we can use forward and backward button to navigate between the pages during the coding of Testcase.
 
-10- Inheritance (in framework explained)- We create a Base Class in our automation Framework to initialize WebDriver interface, waits, loggers, reports etc. and when we extend this Base Class in other classes such as Tests and Utility Class.
-
-11- Below ways (npm libraries) to read data from excel:
+10- Below ways (npm libraries) to read data from excel:
 xlsx
 excel-js
 jasmine-data-provider
 convert-excel-to-json
 
-12- 
+11- 
 
 
 
