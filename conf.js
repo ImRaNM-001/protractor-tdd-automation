@@ -13,7 +13,7 @@ exports.config = {
   directConnect: true,
 
   // params: {
-  // baseURL 'https://angularjs.org/',
+  // baseURL: 'https://angularjs.org/',
   // },
 
   // 1. Capabilities to be passed to the webdriver instance.
@@ -37,7 +37,7 @@ exports.config = {
   // 4. Spec patterns are relative to the current working directory when protractor is called.
 
   // specs: ['specs/*spec_Ex1.js'],
-  specs: ['./specs/sendData_fromExcel.js'],
+  specs: ['./specs/multipleScenarios.js'],
 
   // to run all specs 1 after 1 (non sequentially):
   // specs: ['specs/*'],

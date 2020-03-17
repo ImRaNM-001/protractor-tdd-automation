@@ -1,3 +1,129 @@
+A> Questions and Answers (Notes)::
+
+1- beforeEach and beforeAll difference in Jasmine framework:
+
+beforeEach() function is called before each spec (it block) i.e, code written inside beforeEach runs before every it block whereas,
+
+beforeAll() function is called only once before all the specs (it block) inside the describe function() level are executed.
+
+
+2- Console commands: in order to check Angular version for a site
+
+a>> For Angular.js or Angular1:
+----------------------------------------------------
+angular.version.full 			(run on websites like:::: 
+
+https://juliemr.github.io/protractor-demo/	built on 1.3.0;
+https://angularjs.org/	built on 1.7.9;
+https://www.jiocinema.com/	built on 1.6.1;
+https://www.online.citibank.co.in/	built on 1.4.8;)
+
+
+b>> From Angular2 onwards:
+----------------------------------------------------
+getAllAngularRootElements()[0].attributes['ng-version']		(run on websites like:::: 
+
+https://www.mobikwik.com/	which is built on ng-version="6.1.0")
+https://www-us.computershare.com/EmployeePortal/AngHome	which is built on ng-version="6.0.0")
+https://ng-bootstrap.github.io/#/components/tooltip/examples	which is built on ng-version="9.0.1")
+
+Note: I have tested and both works.
+
+
+3- How to run ONLY 1 particular it block and ignore the rest??
+Ans: Incase we have 20 it blocks in your spec file, but want to run only a particular it block. It's a Very Big NO and not feasible for prefixing all the 19 it blocks with x (i.e, xit)
+
+Run any particular 'it block' by prefixing it with f (i.e, fit)
+describe('Protractor Typescript Demo', function() {
+
+	fit('click operation', function() {
+		console.log("Iam the only one who will run");
+	});
+
+	it('ignore test 1', function() {
+		console.log("they have not prefixed me with f");
+	});
+
+	it('ignore test 2', function() {
+		console.log("they have not prefixed me with f");
+	});
+
+4- How to prevent a particular it block from running??
+Ans: To disable the test case, we have to make the it block as xit block in jasmine.
+
+5- How to block a partciular spec from running??
+Ans: This can be done by excluding the spec from array, see below:
+exclude: ['./specs/loginSpec.js']
+
+6- How to run all all specs sequentially??
+Ans: to run all specs 1 after another (non sequentially):
+specs: ['specs/*'],
+
+use suites
+
+suites : {
+	smoke: ['specs/loginSpec.js', 'specs/regSpec.js', 'specs/spec3.js'],
+	
+	regression: ['specs/reg1.js',
+		   'specs/reg2.js']
+
+	}
+
+command to run the particular test:	protractor conf.js --suite smoke
+
+A test suite is a collection of specs/testcases united by a common property, logic. For instance, you may have suites for different types of functionality of your application, homepage, search etc:
+
+suites: {
+  homepage: 'tests/e2e/homepage/**/*Spec.js',
+  search: [
+    'tests/e2e/contact_search/**/*Spec.js',
+    'tests/e2e/venue_search/**/*Spec.js'
+  ] 
+},
+And/or, you may have specs grouped into suites by the type of tests:
+
+suites: {
+  smoke: 'tests/e2e/smoke/*.js',
+  performance: 'tests/e2e/performance/*.js'
+},
+Or, you may put all of your "regression" tests into a separate suite. Or, you can apply your own logic to group specs.
+
+
+7- Why in protractor we have to resolve in promise? (Googled Qs.)
+(Googled Ans.): Almost all Protractor functions work in this manner – returning a promise that resolves after an indeterminate amount of time, and upon resolving, triggering a function to handle the result.
+
+8- Require vs Import:
+The major difference between require and import , is that require will automatically scan node_modules folder to find modules, but import (which comes from ES6) won't.
+
+9- browser.get() : It's used to go to the particular website , But it doesn't maintain the browser History and cookies so , we can't use forward and backward button , if we click on that , page will not get schedule. 
+
+browser.navigate() : it's used to go to the particular website , but it maintains the browser history and cookies, so we can use forward and backward button to navigate between the pages during the coding of Testcase.
+
+10- Below ways (npm libraries) to read data from excel:
+xlsx
+excel-js
+jasmine-data-provider
+convert-excel-to-json
+
+11- onComplete - A callback function called once all tests are finished. If onComplete returns a promise (optional), Protractor will wait for the promise to resolve before shutting down webdriver.
+
+12- how to exclude a spec file from running in conf.js?
+exclude: ['src/com/sam/scriptjs/winstonlogs.spec.js','src/com/sam/scriptjs/ExcelTest.js'],
+
+13- 
+
+
+
+
+
+
+
+
+
+
+==============================================================================================================
+B> Install Instructions (all of them)::
+
 1- npm install -g protractor		[advisable to run from different path like: C:\testAutomationPractice\installationArea\Protractor but always saves the installed files in default windows directory C:\Users\imz_x\AppData\Roaming\npm\node_modules\protractor]
 
 2- check protractor version as protractor --version
@@ -87,7 +213,61 @@ npm i -g xlsx
 17- Install command for log4js (library for taking output of log statements)
 npm i -g log4js
 
-18- 
+18- Install command for typescript
+npm install -g typescript
+
+19- check typescript version as tsc --version
+
+20- Install command for ts-node
+npm install -g ts-node
+
+21- Install command for cucumber
+npm install -g cucumber
+
+22- Install command for cucumber framework
+npm install --save-dev protractor-cucumber-framework
+
+23- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -10,9 +10,8 @@ describe('writing multiple scenarios', () => {
     } )
 
     // TC1: Verfiy Tooltip
-    it('verify tooltip', () => {
-        // element(by.cssContainingText('.nocode.code-annotation', 'me') ).getAttribute("title").then( (tooltipText) => {
-        //     console.log(tooltipText);
+    xit('verify tooltip', () => {
+        // element(by.cssContainingText('.nocode.code-annotation', 'me') ).getAttribute("title").then(tooltipText => console.log(tooltipText);            // here title is nothing but attribute name (not attribute value)
 
         // $('div.span4>span>code.nocode.code-annotation').getAttribute("me").then( (tooltipText) =>{
         //     console.log(tooltipText);
@@ -32,45 +31,38 @@ describe('writing multiple scenarios', () => {
     it('fetch value from textbox', () => {
         const nameField = element(by.model('yourName') );
         nameField.sendKeys('I am Bond');
-        nameField.getAttribute('value').then(text => {
-            console.log(text);
-        } );
+        nameField.getAttribute('value').then(text => console.log(text) );     // 'value' is attribute name and not attribute value
     } );
 
     // TC3: perform drag and drop
-    it('perform a simple drag and drop', () => {
+    xit('perform a simple drag and drop', () => {
         browser.actions().dragAndDrop(
-            sourceLoc, DestLoc,
+            sourceLoc, destLoc,
             ).perform();
     } );
 
 
     // TC4: perform right click
-    it('perform a right click/ context click', () => {
+    xit('perform a right click/ context click', () => {
         const developLink = $('[]');
 
     } );
 
 
     // TC5: Explcit wait testing
-    it('explicitly waiting for an element', () => {
-        const eC = protractor.ExpectedConditions;
-        browser.wait(eC.presenceOf(element(by.id('')) ), 3000);
-
+    xit('explicitly waiting for an element', () => {
+        const ec = protractor.ExpectedConditions;
+        browser.wait(ec.presenceOf($('#something') ), 3000);
     } );
 
     // TC6: Get URL of a page (done)
     it('get url of the current page', () => {
-        browser.getCurrentUrl().then(url => {
-            console.log(url);    
-        } );
+        browser.getCurrentUrl().then(url => console.log(url) );    
     } );
 
     // TC7: Get Title of a page from the webpage window (done)
     fit('get title from the current window', () => {
-        browser.getTitle().then(title => {
-            console.log(title);    
-        } );
+        browser.getTitle().then(title => console.log(title) );             
     } );
 
 
@@ -80,7 +72,7 @@ describe('writing multiple scenarios', () => {
         // $('//h3[text()="Why AngularJS?"]').getWebElement().then( (element) => {             // $ and xpath combination may not work
             // console.log(element);        
         // } );
-            element(by.cssContainingText('.text-display-1', 'Why AngularJS?')).getWebElement().then(element => {
+            element(by.cssContainingText('.text-display-1', 'Why AngularJS?') ).getWebElement().then(element => {
         console.log(element);        
         } );                                // closing promise started with then fn()
   
