@@ -10,7 +10,7 @@ describe('writing multiple scenarios', () => {
     } )
 
     // TC1: Verfiy Tooltip
-    xit('verify tooltip', () => {
+    it('verify tooltip', () => {
         // element(by.cssContainingText('.nocode.code-annotation', 'me') ).getAttribute("title").then(tooltipText => console.log(tooltipText);            // here title is nothing but attribute name (not attribute value)
 
         // $('div.span4>span>code.nocode.code-annotation').getAttribute("me").then( (tooltipText) =>{
@@ -35,7 +35,7 @@ describe('writing multiple scenarios', () => {
     } );
 
     // TC3: perform drag and drop
-    xit('perform a simple drag and drop', () => {
+    it('perform a simple drag and drop', () => {
         browser.actions().dragAndDrop(
             sourceLoc, destLoc,
             ).perform();
@@ -43,14 +43,14 @@ describe('writing multiple scenarios', () => {
 
 
     // TC4: perform right click
-    xit('perform a right click/ context click', () => {
+    it('perform a right click/ context click', () => {
         const developLink = $('[]');
 
     } );
 
 
     // TC5: Explcit wait testing
-    xit('explicitly waiting for an element', () => {
+    it('explicitly waiting for an element', () => {
         const ec = protractor.ExpectedConditions;
         browser.wait(ec.presenceOf($('#something') ), 3000);
     } );
@@ -61,10 +61,13 @@ describe('writing multiple scenarios', () => {
     } );
 
     // TC7: Get Title of a page from the webpage window (done)
-    fit('get title from the current window', () => {
-        browser.getTitle().then(title => console.log(title) );             
-    } );
+    // it('get title from the current window', () => {
+    //     browser.getTitle().then(title => console.log(title) );             
+    // } );
 
+    fit('get title from the current window', async () => {     // using async, await no promise resolution required
+        console.log('The page title is ' , await browser.getTitle() );          
+    } );
 
     // TC8: Explore WebElement (partially done, returns long )
     it('exploring webElement', () => {

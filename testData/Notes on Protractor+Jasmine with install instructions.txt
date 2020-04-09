@@ -33,7 +33,7 @@ Note: I have tested and both works.
 3- How to run ONLY 1 particular it block and ignore the rest??
 Ans: Incase we have 20 it blocks in your spec file, but want to run only a particular it block. It's a Very Big NO and not feasible for prefixing all the 19 it blocks with x (i.e, xit)
 
-Run any particular 'it block' by prefixing it with f (i.e, fit)
+Run any particular 'it block' by prefixing it with f (i.e, fit) where f stands for focussed.
 describe('Protractor Typescript Demo', function() {
 
 	fit('click operation', function() {
@@ -110,9 +110,26 @@ convert-excel-to-json
 12- how to exclude a spec file from running in conf.js?
 exclude: ['src/com/sam/scriptjs/winstonlogs.spec.js','src/com/sam/scriptjs/ExcelTest.js'],
 
-13- 
+13- how to solve irritating problem and message "Type annotations can only be used in TypeScript files.ts"???
+Ans: by 2 options-->
 
+// option1
+install the extension Flow Language Support
+disable the built-in TypeScript extension:
+How to disable built-in TypeScript:
 
+// option2 (worked in my case)
+go to extensions tab
+search for @builtin TypeScript and JavaScript Language Features
+click on Disable
+(once done, VsCode reboot is required to reflect the changes)
+
+14- Protractor annotations:	beforeAll(), afterAll(), beforeEach(), afterEach()
+
+15- f and x in fdescribe and xdescribe block means
+'focussed' and 'temporary disabled describe block' respectively.
+
+16- 
 
 
 
@@ -132,7 +149,7 @@ B> Install Instructions (all of them)::
 
 3- webdriver-manager start (do it from cmd not from vscode terminal)		[not required to run if directConnect: true, in package.json file]
 
-4- npm init (this command is used to create package.json file for the 1st time, while creation enter below data):  		[advisable to run from different path like: C:\testAutomationPractice\installationArea\Protractor because it will create node_modules folder which will conflict with .git push because of its large size (12MB approx) ]
+4- npm init (this command is used to create package.json file for the 1st time, while creation enter below data):  		[advisable to run from different path like: C:\testAutomationPractice\installationArea\Protractor because it will create node_modules folder which will conflict with .git push because of its large size (ranging from 12MB to 55MB or even more depending upon libraries installed) ]
 
 package name: (protractor_learning) test
 version: (1.0.0)
@@ -164,7 +181,7 @@ About to write to C:\Users\Imran-A.Mazumder\OneDrive\Documents\REITERATE_PRACTIC
 10- If any script running issue occurs with message like protractor.ps1 cannot be loaded because running scripts is disabled on this system. This is because The PowerShell execution policy is default set to Restricted. We have to change the PowerShell execution policies to RemoteSigned.
 
 Do the following (must hit a i.e, [A] Yes to All ) :
-========================================
+-----------------------------------------------------------
 Set-ExecutionPolicy RemoteSigned
 
 Execution Policy Change
