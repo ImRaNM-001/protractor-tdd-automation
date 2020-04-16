@@ -231,7 +231,9 @@ npm i -g xlsx
 npm i -g log4js
 
 18- Install command for typescript
-npm install -g typescript
+npm install -g typescript		(will install latest version)
+npm install -g typescript@3.8		(will install a specific version, ex: 3.8)
+npm uninstall -g typescript		(will uninstall the installed version)
 
 19- check typescript version as tsc --version
 

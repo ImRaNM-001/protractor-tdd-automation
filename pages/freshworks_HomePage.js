@@ -1,7 +1,7 @@
 class Freshworks_HomePage{
 
     // 1st fn
-    get pageHeader() { return $('h1'); }
+    get pageHeader = () => $('h1');          // written directly with fat arrow fn()
     
     // 2nd fn
     get subHeader(){ 

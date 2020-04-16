@@ -8,7 +8,7 @@ describe('spice jet homepage actions', () => {
 
     it('moving to parent i.e, main menu Login/Signup link', () => {
         browser.get('https://www.spicejet.com/');
-        // browser.actions().moveToElement(spiceJetPage.loginSignUp).click().perform();
+        // browser.actions().moveToElement(spiceJetPage.loginSignUp).click().perform();     // unlike selenium, moveToElement() is a not fn() in protractor
 
         browser.actions().mouseMove(spiceJetPage.loginSignUp).click().perform();
         browser.actions().mouseMove(spiceJetPage.spiceClubMem).click().perform();

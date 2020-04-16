@@ -1,9 +1,7 @@
 class Internet_heroLoginPage{
 
     // getting locator for username field
-    get userName(){
-        return $('#username');
-    }
+    get userName = () => $('#username');
 
     // getting locator for password field
     get passWord(){

@@ -17,9 +17,7 @@ class Blazemeter_HomePage{
     // } );
     
     get textForLi(){
-        return this.childElements.getText().then(elementsToPrint => {
-        console.log(elementsToPrint);         
-     } );
+        return this.childElements.getText().then(elementsToPrint => console.log(elementsToPrint) );
     }
 
     
@@ -33,9 +31,7 @@ class Blazemeter_HomePage{
     }
 
     get textOf_useCasesElements(){
-        return this.useCasesElements.getText().then(elementsToPrint => {
-        console.log(elementsToPrint);
-        } );
+        return this.useCasesElements.getText().then(elementsToPrint => console.log(elementsToPrint) );
     }
 
     // 3rd fn
@@ -65,11 +61,9 @@ class Blazemeter_HomePage{
         );     
     }
 
-    // Below code will not work as it is not resolved in a promise [works fine in WDIO]
-    // clickon_startTestingNow_Link(){
-    //     if(this.startTestingNow_Link.isDisplayed() === true){
-    //         this.startTestingNow_Link.click();
-    //     }
+    // Below code will also work as it's promise is resolved via async await [works fine in WDIO without need for promise resolution]
+    // async clickon_startTestingNow_Link(){
+    //     if(await this.startTestingNow_Link.isDisplayed() === true) this.startTestingNow_Link.click();
     // }
 
 }

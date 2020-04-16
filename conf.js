@@ -37,7 +37,7 @@ exports.config = {
   // 4. Spec patterns are relative to the current working directory when protractor is called.
 
   // specs: ['specs/*spec_Ex1.js'],
-  specs: ['./specs/multipleScenarios.js'],
+  specs: ['./specs/handlingElements_(SDET).js'],
 
   // to run all specs 1 after 1 (non sequentially):
   // specs: ['specs/*'],
