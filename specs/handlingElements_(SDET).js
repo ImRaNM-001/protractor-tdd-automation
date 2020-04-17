@@ -91,11 +91,21 @@ describe('handling elements in an angular app', () => {
 
     // below code is for dropdown selection for dynamic value (means user-defined entries):
         const parent_elem = element(by.model('custId') ),               // Customer dropdown = parent_elem
-        child_elems = parent_elem.$$('option'),                         // Customer options = child_elems
-        child_elems_txtArr = await child_elems.getText();
+        child_elems = parent_elem.$$('option');                         // Customer options = child_elems
 
-        for(const elem of child_elems_txtArr){
-            if(child_elems_txtArr.includes('abc xyz') )	elem.click();
+        // using tradional for loop to hit the element in dropdown
+        for(let index = 0;  index < child_elems.length;  index++){
+            if(child_elems[index] === 'Steve Rogers')	child_elems[index].click();
+        }           
+
+        // using for-in loop to hit the element in dropdown
+        for(const index in child_elems){
+            if(child_elems[index] === 'Steve Rogers') child_elems[index].click();
+        }
+
+        // using for-of loop to hit the element in dropdown
+        for(const elem of child_elems){
+            if(elem === 'Steve Rogers') elem.click();
         }
 
         element(by.model('currency') ).$('[value="Dollar"]').click();  

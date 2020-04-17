@@ -124,12 +124,20 @@ search for @builtin TypeScript and JavaScript Language Features
 click on Disable
 (once done, VsCode reboot is required to reflect the changes)
 
-14- Protractor annotations:	beforeAll(), afterAll(), beforeEach(), afterEach()
+14- Run typescript (.ts) file from terminal by one of the following 3 ways:
+(i) tsc helloWorld.ts		then once .ts file converted to .js, run		node helloWorld.js
 
-15- f and x in fdescribe and xdescribe block means
+(ii) tsc helloWorld.ts | node helloWorld.js		(merged both commands)
+
+(iii) ts-node helloWorld.ts --target ES6		(to directly run after getting converted to ES6 code, Note: you must install ts-node npm library for running this command)
+
+
+15- Protractor annotations:	beforeAll(), afterAll(), beforeEach(), afterEach()
+
+16- f and x in fdescribe and xdescribe block means
 'focussed' and 'temporary disabled describe block' respectively.
 
-16- 
+17- 
 
 
 
@@ -231,7 +239,7 @@ npm i -g xlsx
 npm i -g log4js
 
 18- Install command for typescript
-npm install -g typescript		(will install latest version)
+npm install -g typescript		(will install latest version) [i got Version 3.8.3 after running this command]
 npm install -g typescript@3.8		(will install a specific version, ex: 3.8)
 npm uninstall -g typescript		(will uninstall the installed version)
 
