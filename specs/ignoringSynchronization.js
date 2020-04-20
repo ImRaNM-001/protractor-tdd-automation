@@ -13,14 +13,13 @@ describe('test to open a webPage', () => {
         // browser.get('https://www.youtube.com');          // this line of code will show failure spec unless application is angular, hence use browser.driver.get
 
         browser.driver.get('https://www.youtube.com');       // this line of code will not fail the test        
-        // browser.manage().window().maximize();             // added in conf.js inside onPrepare function (), hence commented here  
     } );
 
-    // // TC2
+    // TC2
     fit('open Angular page and waiting for angular', () => {
         browser.get('https://angularjs.org/');                  // passes spec without driver instance since application is PURE angular
         element(by.linkText('angular.io') ).click();            // exploring and testing by.linkText locator of selenium
-        // element(by.partialLinkText('.io') ).click();     // exploring and testing by.partialLinkText locator of selenium
+        // element(by.partialLinkText('.io') ).click();         // exploring and testing by.partialLinkText locator of selenium
         browser.sleep(3000);
     } );
 
