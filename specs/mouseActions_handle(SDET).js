@@ -21,8 +21,7 @@ describe('handling various mouse actions', () => {
         browser.actions().mouseMove(pim).mouseMove(confi).mouseMove(opt_fields).click().perform();
         browser.wait(ec.visibilityOf($('h1') ), 5000);          // waiting for Configure PIM header
         expect($('h1').getText() ).toBe('Configure PIM');
-
-    } );
+} );
 
 
 // TC 2: double click perform
@@ -47,12 +46,25 @@ describe('handling various mouse actions', () => {
     it('perform a right click/ context click and actions on an alert', async () => {
         browser.get('https://swisnl.github.io/jQuery-contextMenu/demo.html');
 
-        const rt_clickBtn = $('.context-menu-one.btn.btn-neutral');
+        const rt_clickBtn = $('.context-menu-one.btn.btn-neutral');         // using css with $
         // browser.actions().contextClick(rt_clickBtn).perform();        // prints red error TypeError: browser.actions(...).contextClick is not a function
         browser.actions().click(rt_clickBtn, protractor.Button.RIGHT).perform();
-        // const list_options = $('ul.context-menu-list.context-menu-root > li:nth-child(7)');      // list option started from index 1 and not 0
+
         const list_options = $('ul.context-menu-list.context-menu-root > li:last-child');         // also works fine
-        // const list_options = $('ul.context-menu-list > li:last-child');                // also works fine where i used only 1 className
+
+    /* Few sample of locators which might come handy
+    rt_clickBtn = element(by.xpath('//span[text()="right click me"]') );     // xpath from Mukesh's video
+
+    list_options = $('ul.context-menu-list > li:last-child');                // also works fine where i used only 1 className
+
+    list_options = $('ul.context-menu-list.context-menu-root > li:nth-child(7)');      // list option started from index 1 and not 0
+
+    list_options = $('ul.context-menu-list').$$('li').last();
+
+    list_options = $('ul.context-menu-list').$$('li').get(6);           // Quit is at 6th position
+
+    list_options = element(by.xpath('//span[text()="Quit"]') );          // xpath from Mukesh's video   */
+
         list_options.click();
 
         // browser.pause();

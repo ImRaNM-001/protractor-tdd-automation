@@ -132,12 +132,15 @@ click on Disable
 (iii) ts-node helloWorld.ts --target ES6		(to directly run after getting converted to ES6 code, Note: you must install ts-node npm library for running this command)
 
 
-15- Protractor annotations:	beforeAll(), afterAll(), beforeEach(), afterEach()
+15- Auto compile typescript file as we type code by following watch command (as taught by Brad Traversy):
+tsc helloWorld.ts -w
 
-16- f and x in fdescribe and xdescribe block means
+16- Protractor annotations:	beforeAll(), afterAll(), beforeEach(), afterEach()
+
+17- f and x in fdescribe and xdescribe block means
 'focussed' and 'temporary disabled describe block' respectively.
 
-17- 
+18- 
 
 
 
