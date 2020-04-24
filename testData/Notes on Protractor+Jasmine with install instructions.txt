@@ -125,14 +125,14 @@ click on Disable
 (once done, VsCode reboot is required to reflect the changes)
 
 14- Run typescript (.ts) file from terminal by one of the following 3 ways:
-(i) tsc helloWorld.ts		then once .ts file converted to .js, run		node helloWorld.js
+(i) tsc .\helloWorld.ts		then once .ts file converted to .js, run		node helloWorld.js
 
 (ii) tsc helloWorld.ts | node helloWorld.js		(merged both commands)
 
 (iii) ts-node helloWorld.ts --target ES6		(to directly run after getting converted to ES6 code, Note: you must install ts-node npm library for running this command)
 
 
-15- Auto compile typescript file as we type code by following watch command (as taught by Brad Traversy):
+15- Auto compile typescript file from terminal as we type code by the below "watch" command (as taught by Brad Traversy):
 tsc helloWorld.ts -w
 
 16- Protractor annotations:	beforeAll(), afterAll(), beforeEach(), afterEach()
