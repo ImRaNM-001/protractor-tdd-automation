@@ -16,7 +16,7 @@ describe('test to open a webPage', () => {
     } );
 
     // TC2
-    fit('open Angular page and waiting for angular', () => {
+    it('open Angular page and waiting for angular', () => {
         browser.get('https://angularjs.org/');                  // passes spec without driver instance since application is PURE angular
         element(by.linkText('angular.io') ).click();            // exploring and testing by.linkText locator of selenium
         // element(by.partialLinkText('.io') ).click();         // exploring and testing by.partialLinkText locator of selenium
@@ -24,17 +24,16 @@ describe('test to open a webPage', () => {
     } );
 
     // TC3
-    xit('open Non-Angular page by ignoring Synchronization', () => {
+    it('open Non-Angular page by ignoring Synchronization', () => {
         browser.ignoreSynchronization = true;
         browser.get('https://www.youtube.com');                  // passes spec without driver instance since Synchronization is set as true
     } );
 
     // TC4
-    xit('open Non-Angular page by setting waitforAngular as false', () => {
+    it('open Non-Angular page by setting waitforAngular as false', () => {
         browser.waitForAngularEnabled(false);
         browser.get('https://www.youtube.com');                  // spec is passed without driver instance since waitForAngularEnabled is set as false
     } );
-
 
 } );                        // closing describe fn()
 

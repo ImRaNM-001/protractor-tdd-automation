@@ -20,8 +20,8 @@ exports.config = {
   capabilities: {
     browserName: 'chrome',
     chrommeOptions: {
-      args: ['--headless', '--disable-gpu', '--window-size=800x600']
-      // args: ['--headless']
+       // args: ['--headless', '--disable-gpu', '--window-size=800x600']
+      args: ['--headless']
     }
   },
 
@@ -36,17 +36,20 @@ exports.config = {
 
   // 4. Spec patterns are relative to the current working directory when protractor is called.
 
-  // specs: ['specs/*spec_Ex1.js'],
-  specs: ['./specs/luck.js'],
+  // a- filename preceded with * mark is also accepted and runs fine  
+  // specs: ['specs/*spec_Ex1.js'],    
 
-  // to run all specs 1 after 1 (non sequentially):
-  // specs: ['specs/*'],
+  // b- MOST OFTEN used file code now intentionally commented as i am running directly thro' terminal
+  specs: ['./specs/handlingElements_(SDET).js'],
 
-  // to run selected specs (in sequence):
-// specs: ['specs/ignoringSynchronization.js',
-// 'specs/exploring_AngularLocators.js',
-// 'specs/print_in_Console_&_verifyResult.js'
-// ],
+  // c- to run all specs 1 after 1 (non sequentially):
+    // specs: ['specs/*'],
+
+  // d- to run selected specs (in sequence):
+    // specs: ['specs/ignoringSynchronization.js',
+    // 'specs/exploring_AngularLocators.js',
+    // 'specs/print_in_Console_&_verifyResult.js'
+    // ],
 
   // 5. Options to be passed to Jasmine (i.e, declaring spec timeout).
   jasmineNodeOpts: {

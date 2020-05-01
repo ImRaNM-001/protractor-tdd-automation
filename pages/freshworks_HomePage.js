@@ -1,7 +1,12 @@
 class Freshworks_HomePage{
 
     // 1st fn
-    get pageHeader = () => $('h1');          // written directly with fat arrow fn()
+    // get pageHeader(){
+    //     return $('h1'); 
+    // }
+
+    // written directly with fat arrow fn() but it's actually not a good idea to write fat arrow fns() inside a class, use normal fn() notation instead, that is quick to write
+    get pageHeader = () => $('h1'); 
     
     // 2nd fn
     get subHeader(){ 

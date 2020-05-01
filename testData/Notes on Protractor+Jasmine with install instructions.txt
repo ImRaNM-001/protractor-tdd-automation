@@ -100,7 +100,7 @@ The major difference between require and import , is that require will automatic
 browser.navigate() : it's used to go to the particular website , but it maintains the browser history and cookies, so we can use forward and backward button to navigate between the pages during the coding of Testcase.
 
 10- Below ways (npm libraries) to read data from excel:
-xlsx
+xlsx	(i have used this one)
 excel-js
 jasmine-data-provider
 convert-excel-to-json
@@ -125,24 +125,49 @@ click on Disable
 (once done, VsCode reboot is required to reflect the changes)
 
 14- Run typescript (.ts) file from terminal by one of the following 3 ways:
-(i) tsc .\helloWorld.ts		then once .ts file converted to .js, run		node helloWorld.js
+(i) tsc .\helloWorld.ts	then once .ts file converted to .js, then run the corresponding js file
+node .\helloWorld.js
+
+Note: .ts or .js extensions are optional, we can run code without these also
 
 (ii) tsc helloWorld.ts | node helloWorld.js		(merged both commands)
 
 (iii) ts-node helloWorld.ts --target ES6		(to directly run after getting converted to ES6 code, Note: you must install ts-node npm library for running this command)
 
 
-15- Auto compile typescript file from terminal as we type code by the below "watch" command (as taught by Brad Traversy):
-tsc helloWorld.ts -w
+15- but to run typescript (.ts) file with module from terminal, we need to use different command as below (taught by SDET):
+tsc --module commonjs .\test1(moduleConcept).ts
+tsc --module commonjs .\test2(moduleConcept).ts			then run 2nd js file (not 1st) by the command		node .\test2(moduleConcept).ts
 
-16- Protractor annotations:	beforeAll(), afterAll(), beforeEach(), afterEach()
 
-17- f and x in fdescribe and xdescribe block means
+16- Auto compile typescript file from terminal as we type code by the below "watch" command (as taught by Brad Traversy):
+tsc helloWorld.ts -w		(or) can exlude the file extension also and write full watch		tsc helloWorld --watch
+
+17- Protractor annotations:	beforeAll(), afterAll(), beforeEach(), afterEach()
+
+18- f and x in fdescribe and xdescribe block means
 'focussed' and 'temporary disabled describe block' respectively.
 
-18- 
+19- shorten protractor run command to either one of the following (all worked fine when tested):
+npm t		[i am using this as i have to type less]
+npm test		[first seen when used by sunil patro_qavbox channel]
+npm run test	[first seen in Naveen's video for WDIO]
 
+just change/replace		"test": "echo \"Error: no test specified\" && exit 1"
+to			"test": "protractor conf.js" 
+in "scripts" object of package.json file
 
+Alternatively if we add "--specs" like 
+"test": "protractor ./conf.js --specs"	(Or), 	"test": "protractor conf.js --specs"
+
+then we can run spec file directly from terminal by following command:
+npm t '.\specs\mouseActions_handle(SDET).js'	
+
+where .js is the file name	(in that scenario, specs from conf.js will not be considered and we can comment that line also (no issues will happen with file run)
+
+Note: when using		npm t '.\specs\mouseActions_handle(SDET).js'		,there shouldn't be & in the filename otherwise compiler will show "no specs found" in console, as basically it can't read the filename with &
+
+20- 
 
 
 

@@ -1,6 +1,11 @@
 class Internet_heroLoginPage{
 
     // getting locator for username field
+    // get userName(){
+    //     return $('#username');
+    // }
+
+    // written directly with fat arrow fn() but it's actually not a good idea to write fat arrow fns() inside a class, use normal fn() notation instead, that is quick to write
     get userName = () => $('#username');
 
     // getting locator for password field

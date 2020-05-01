@@ -1,6 +1,11 @@
 class Internet_heroHomePage{
 
     // 1st fn
+    // get h3Header(){
+    //     return $('h3');
+    // }
+
+    // written directly with fat arrow fn() but it's actually not a good idea to write fat arrow fns() inside a class, use normal fn() notation instead, that is quick to write
     get h3Header = () => $('h3');
 
     // 2nd fn pair
