@@ -114,11 +114,14 @@ exclude: ['src/com/sam/scriptjs/winstonlogs.spec.js','src/com/sam/scriptjs/Excel
 Ans: by 2 options-->
 
 // option1
+
 install the extension Flow Language Support
 disable the built-in TypeScript extension:
 How to disable built-in TypeScript:
 
+
 // option2 (worked in my case)
+
 go to extensions tab
 search for @builtin TypeScript and JavaScript Language Features
 click on Disable
@@ -141,7 +144,7 @@ tsc --module commonjs .\test2(moduleConcept).ts			then run 2nd js file (not 1st)
 
 
 16- Auto compile typescript file from terminal as we type code by the below "watch" command (as taught by Brad Traversy):
-tsc helloWorld.ts -w		(or) can exlude the file extension also and write full watch		tsc helloWorld --watch
+tsc helloWorld.ts -w		(or) can exlude the file extension also works fine and write full watch		tsc helloWorld --watch
 
 17- Protractor annotations:	beforeAll(), afterAll(), beforeEach(), afterEach()
 
@@ -158,17 +161,26 @@ to			"test": "protractor conf.js"
 in "scripts" object of package.json file
 
 Alternatively if we add "--specs" like 
-"test": "protractor ./conf.js --specs"	(Or), 	"test": "protractor conf.js --specs"
+"test": "protractor ./conf.js --specs"	(or), 	"test": "protractor conf.js --specs"
 
 then we can run spec file directly from terminal by following command:
 npm t '.\specs\mouseActions_handle(SDET).js'	
 
-where .js is the file name	(in that scenario, specs from conf.js will not be considered and we can comment that line also (no issues will happen with file run)
+where .js is the file name	(in such a scenario, specs from conf.js will not be considered and we can comment that line also (no issues will happen when file is being run)
 
 Note: when using		npm t '.\specs\mouseActions_handle(SDET).js'		,there shouldn't be & in the filename otherwise compiler will show "no specs found" in console, as basically it can't read the filename with &
 
-20- 
+20- Update TypeScript library so to support new features of ES2018, ES2019 like Map, Set, few String class fns() ex: .trimRight() and .trimLeft()
 
+open typescript workspace path in vsCode terminal and type 		tsc --init 		(exact example below)
+C:\testAutomationPractice\workSpace\typeScript_Programs_1>tsc --init				then 2 new files viz, "tsconfig.json" and "package-lock.json" will be automatically created.
+
+open "tsconfig.json" and update 	"target": "es5"		to 	"target": "es2019"		(by default, it is the es5 motherfucker which doesn't execute new codes)
+
+save it and then run npm install from the same terminal		i.e, C:\testAutomationPractice\workSpace\typeScript_Programs_1>npm install
+
+
+21- 
 
 
 
@@ -214,7 +226,22 @@ About to write to C:\Users\Imran-A.Mazumder\OneDrive\Documents\REITERATE_PRACTIC
 
 9- Run the tests using the command protractor conf.js
 
-10- If any script running issue occurs with message like protractor.ps1 cannot be loaded because running scripts is disabled on this system. This is because The PowerShell execution policy is default set to Restricted. We have to change the PowerShell execution policies to RemoteSigned.
+10- If any script running issue occurs with message like protractor.ps1 cannot be loaded because 	"running scripts is disabled on this system". This is because The PowerShell execution policy is default set to Restricted. We have to change the PowerShell execution policies to RemoteSigned.
+
+Steps to follow for changing at system level:
+
+(i) open poweshell for non-admin user by holding shift key + right click on windows button, select the "Windows PowerShell" option.
+(ii) type "Set-ExecutionPolicy RemoteSigned" and hit enter
+(iii) then type "a" key as specified below which stands for [A] Yes to All		
+(iv) again hit enter 			and we are all set.
+
+Steps to follow for changing at system level:
+(i) open poweshell for non-admin user by holding shift key + right click on windows button, select the "Windows PowerShell" option.
+(ii) type "Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force"	(don't out double quotes or else it will defeat the purpose)
+
+
+**below lines will appear in blue color UI of powershell while running above commands***
+
 
 Do the following (must hit a i.e, [A] Yes to All ) :
 -----------------------------------------------------------
@@ -225,6 +252,7 @@ The execution policy helps protect you from scripts that you do not trust. Chang
 you to the security risks described in the about_Execution_Policies help topic at
 https:/go.microsoft.com/fwlink/?LinkID=135170. Do you want to change the execution policy?
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): a
+
 
 
 11- Install command for protractor screenshot reporter for Jasmine2	(here we are installing a library and adding code in conf.js file for taking screenshots only, this report generates basic report and separate screenshot file):
