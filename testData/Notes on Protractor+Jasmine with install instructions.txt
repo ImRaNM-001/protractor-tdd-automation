@@ -137,6 +137,11 @@ Note: .ts or .js extensions are optional, we can run code without these also
 
 (iii) ts-node helloWorld.ts --target ES6		(to directly run after getting converted to ES6 code, Note: you must install ts-node npm library for running this command)
 
+(or, as taught by CGI external trainer)		tsc --target ES6 helloWorld.ts		then node helloWorld.ts	
+
+(or, case does not matter, learnt from "Execute Automation Karthik's channel)		tsc --target es6 helloWorld.ts		then node helloWorld.ts
+
+
 
 15- but to run typescript (.ts) file with module from terminal, we need to use different command as below (taught by SDET):
 tsc --module commonjs .\test1(moduleConcept).ts
@@ -146,6 +151,10 @@ tsc --module commonjs .\test2(moduleConcept).ts			then run 2nd js file (not 1st)
 16- Auto compile typescript file from terminal as we type code by the below "watch" command (as taught by Brad Traversy):
 tsc helloWorld.ts -w		(or) can exlude the file extension also works fine and write full watch		tsc helloWorld --watch
 
+// another way (although i haven't tried):
+in tsconfig.json file under "compilerOptions": {} object, write
+"watch" : true 
+
 17- Protractor annotations:	beforeAll(), afterAll(), beforeEach(), afterEach()
 
 18- f and x in fdescribe and xdescribe block means
@@ -153,7 +162,7 @@ tsc helloWorld.ts -w		(or) can exlude the file extension also works fine and wri
 
 19- shorten protractor run command to either one of the following (all worked fine when tested):
 npm t		[i am using this as i have to type less]
-npm test		[first seen when used by sunil patro_qavbox channel]
+npm test		[first seen when used by sunil patro_qavbox channel, now he uses below command as well]
 npm run test	[first seen in Naveen's video for WDIO]
 
 just change/replace		"test": "echo \"Error: no test specified\" && exit 1"

@@ -40,7 +40,7 @@ exports.config = {
   // specs: ['specs/*spec_Ex1.js'],    
 
   // b- MOST OFTEN used file code now intentionally commented as i am running directly thro' terminal
-  specs: ['./specs/handlingElements_(SDET).js'],
+  specs: ['./specs/params_alternative.js'],
 
   // c- to run all specs 1 after 1 (non sequentially):
     // specs: ['specs/*'],
@@ -65,6 +65,8 @@ exports.config = {
     // Assign the test summaryReport to each running instance
     // jasmine.getEnv().addReporter(reporter);      // won't be added as i would be using protractor-html-reporter-2
 
+    // instead of using params inside conf.js, we are using external test data file as global parameters
+    browser.apGbl = require('./testData/appGlobals_(qavbox)');
     
     // inserted below code to obtain results in xml file for satisfying bottom code new HTMLReport().from('xmlresults.xml', testConfig);
     const jasmineReporters = require('C:/testAutomationPractice/installationArea/Protractor/node_modules/jasmine-reporters');

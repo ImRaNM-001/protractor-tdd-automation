@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuites disabled="0" errors="0" failures="0" tests="2" time="20.971">
- <testsuite name="handling elements in an angular app" timestamp="2020-04-26T19:04:33" hostname="localhost" time="20.971" errors="0" tests="2" skipped="0" disabled="0" failures="0">
-  <testcase classname="handling elements in an angular app" name="add a new user_SDET video" time="5.126" />
-  <testcase classname="handling elements in an angular app" name="dropdown value handle_qavbox video part2" time="15.843" />
+<testsuites disabled="0" errors="0" failures="0" tests="1" time="1.149">
+ <testsuite name="testing qavbox video on Protractor global params and access params from a ts file" timestamp="2020-05-25T20:08:02" hostname="localhost" time="1.149" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="testing qavbox video on Protractor global params and access params from a ts file" name="print the global appGlobals ts file parameters" time="1.147" />
  </testsuite>
 </testsuites>

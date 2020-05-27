@@ -18,7 +18,6 @@ describe('spice jet homepage actions', () => {
     } );
     
 
-      
     
    
 
