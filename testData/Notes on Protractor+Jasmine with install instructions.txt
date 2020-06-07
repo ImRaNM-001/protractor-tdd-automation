@@ -149,7 +149,7 @@ tsc --module commonjs .\test2(moduleConcept).ts			then run 2nd js file (not 1st)
 
 
 16- Auto compile typescript file from terminal as we type code by the below "watch" command (as taught by Brad Traversy):
-tsc helloWorld.ts -w		(or) can exlude the file extension also works fine and write full watch		tsc helloWorld --watch
+tsc helloWorld.ts -w		(or) we can also exlude the file extension which also works fine and write full watch		tsc helloWorld --watch
 
 // another way (although i haven't tried):
 in tsconfig.json file under "compilerOptions": {} object, write
