@@ -5,7 +5,7 @@ describe('web table validations', () => {
     } );
 
     // TC 1
-    it('view product details', async () => { 
+    it('view product details', async () =>{ 
 
         // storing data of Product View table (4th row from Product List table)
         const name = '1001 Activities Book',

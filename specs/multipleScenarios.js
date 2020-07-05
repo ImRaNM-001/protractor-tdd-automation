@@ -99,8 +99,7 @@ describe('writing multiple scenarios', () => {
     some sample trials for hunting xpath/css in earlier days:
     1- element(by.cssContainingText('.text-display-1', 'Why AngularJS?') ).getWebElement().then(element => console.log(element) ); 
 
-    2- $('//h3[text()="Why AngularJS?"]').getWebElement().then(element => console.log(element) );       // $ and xpath combination surely won't work
-    */
+    2- $('//h3[text()="Why AngularJS?"]').getWebElement().then(element => console.log(element) );       // $ and xpath combination surely won't work                        */
 
     } );                                                // closing TC7 it block
 } );                            // closing main describe block

@@ -1,13 +1,13 @@
-const xlSX = require('C:/testAutomationPractice/installationArea/Protractor/node_modules/xlsx');
+const xl = require('C:/testAutomationPractice/installationArea/Protractor/node_modules/xlsx');
 
-// import { } from 'C:/testAutomationPractice/installationArea/Protractor/node_modules/xlsx';   // ES6 module
+// import {xlsx} from 'C:/testAutomationPractice/installationArea/Protractor/node_modules/xlsx';   // ES6 module concept
 
 class XlReader{
 
     readData_fromExcel(sheetName, filePath){
-        const workBook = xlSX.readFile(filePath);
+        const workBook = xl.readFile(filePath);
         const workSheet = workBook.Sheets(sheetName);
-        return xlSX.utils.sheet_to_json(workSheet);
+        return xl.utils.sheet_to_json(workSheet);
     }
 
 }

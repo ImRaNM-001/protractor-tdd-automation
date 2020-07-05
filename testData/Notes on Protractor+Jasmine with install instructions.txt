@@ -95,22 +95,18 @@ Or, you may put all of your "regression" tests into a separate suite. Or, you ca
 8- Require vs Import:
 The major difference between require and import , is that require will automatically scan node_modules folder to find modules, but import (which comes from ES6) won't.
 
-9- browser.get() : It's used to go to the particular website , But it doesn't maintain the browser History and cookies so , we can't use forward and backward button , if we click on that , page will not get schedule. 
-
-browser.navigate() : it's used to go to the particular website , but it maintains the browser history and cookies, so we can use forward and backward button to navigate between the pages during the coding of Testcase.
-
-10- Below ways (npm libraries) to read data from excel:
+9- Below ways (npm libraries) to read data from excel:
 xlsx	(i have used this one)
 excel-js
 jasmine-data-provider
 convert-excel-to-json
 
-11- onComplete - A callback function called once all tests are finished. If onComplete returns a promise (optional), Protractor will wait for the promise to resolve before shutting down webdriver.
+10- onComplete - A callback function called once all tests are finished. If onComplete returns a promise (optional), Protractor will wait for the promise to resolve before shutting down webdriver.
 
-12- how to exclude a spec file from running in conf.js?
+11- how to exclude a spec file from running in conf.js?
 exclude: ['src/com/sam/scriptjs/winstonlogs.spec.js','src/com/sam/scriptjs/ExcelTest.js'],
 
-13- how to solve irritating problem and message "Type annotations can only be used in TypeScript files.ts"???
+12- how to solve irritating problem and message "Type annotations can only be used in TypeScript files.ts"???
 Ans: by 2 options-->
 
 // option1
@@ -127,7 +123,7 @@ search for @builtin TypeScript and JavaScript Language Features
 click on Disable
 (once done, VsCode reboot is required to reflect the changes)
 
-14- Run typescript (.ts) file from terminal by one of the following 3 ways:
+13- Run typescript (.ts) file from terminal by one of the following 3 ways:
 (i) tsc .\helloWorld.ts	then once .ts file converted to .js, then run the corresponding js file
 node .\helloWorld.js
 
@@ -143,24 +139,24 @@ Note: .ts or .js extensions are optional, we can run code without these also
 
 
 
-15- but to run typescript (.ts) file with module from terminal, we need to use different command as below (taught by SDET):
+14- but to run typescript (.ts) file with module from terminal, we need to use different command as below (taught by SDET):
 tsc --module commonjs .\test1(moduleConcept).ts
 tsc --module commonjs .\test2(moduleConcept).ts			then run 2nd js file (not 1st) by the command		node .\test2(moduleConcept).ts
 
 
-16- Auto compile typescript file from terminal as we type code by the below "watch" command (as taught by Brad Traversy):
+15- Auto compile typescript file from terminal as we type code by the below "watch" command (as taught by Brad Traversy):
 tsc helloWorld.ts -w		(or) we can also exlude the file extension which also works fine and write full watch		tsc helloWorld --watch
 
 // another way (although i haven't tried):
 in tsconfig.json file under "compilerOptions": {} object, write
 "watch" : true 
 
-17- Protractor annotations:	beforeAll(), afterAll(), beforeEach(), afterEach()
+16- Protractor annotations:	beforeAll(), afterAll(), beforeEach(), afterEach()
 
-18- f and x in fdescribe and xdescribe block means
+17- f and x in fdescribe and xdescribe block means
 'focussed' and 'temporary disabled describe block' respectively.
 
-19- shorten protractor run command to either one of the following (all worked fine when tested):
+18- shorten protractor run command to either one of the following (all worked fine when tested):
 npm t		[i am using this as i have to type less]
 npm test		[first seen when used by sunil patro_qavbox channel, now he uses below command as well]
 npm run test	[first seen in Naveen's video for WDIO]
@@ -179,7 +175,7 @@ where .js is the file name	(in such a scenario, specs from conf.js will not be c
 
 Note: when using		npm t '.\specs\mouseActions_handle(SDET).js'		,there shouldn't be & in the filename otherwise compiler will show "no specs found" in console, as basically it can't read the filename with &
 
-20- Update TypeScript library so to support new features of ES2018, ES2019 like Map, Set, few String class fns() ex: .trimRight() and .trimLeft()
+19- Update TypeScript library so to support new features of ES2018, ES2019 like Map, Set, few String class fns() ex: .trimRight() and .trimLeft()
 
 open typescript workspace path in vsCode terminal and type 		tsc --init 		(exact example below)
 C:\testAutomationPractice\workSpace\typeScript_Programs_1>tsc --init				then 2 new files viz, "tsconfig.json" and "package-lock.json" will be automatically created.
@@ -189,7 +185,25 @@ open "tsconfig.json" and update 	"target": "es5"		to 	"target": "es2019"		(by de
 save it and then run npm install from the same terminal		i.e, C:\testAutomationPractice\workSpace\typeScript_Programs_1>npm install
 
 
-21- 
+20- dependencies	vs	devDependencies:
+dependencies are packages required by your application in production environment......
+i.e, these packages are required to run the application in a production-ready environment. Without these packages, your app won’t work		whereas
+
+devDependencies are packages that are only needed for local development and testing......
+i.e, these packages are required to develop and build your app, but are not needed to run the final version that customers will use.
+
+
+21- const str : string = 'hey';
+      ^^
+SyntaxError: Missing initializer in const declaration
+
+This type of error comes only if:
+1) TS code is written in a JS file
+2) TS compiler assumes and thinks the code written in TS file is actually a JS code and hence displays this error, something wrong in configurations of TS actually.....that's why it happens
+
+22- ElementFinder in Protractor: the single web element belongs to type ElementFinder. The ElementFinder can be treated as a WebElement for most purposes, in particular, you may perform actions (i.e. click, getText) on them as you would a WebElement. Once an action is performed on an ElementFinder, the latest result from the chain can be accessed using the then method.
+		Unlike a WebElement, an ElementFinder will wait for angular to settle before performing finds or actions.
+
 
 
 
@@ -319,30 +333,17 @@ npm install -g cucumber
 22- Install command for cucumber framework
 npm install --save-dev protractor-cucumber-framework
 
-23- 
+23- when an	"error message: Could not find update-config.json. Run 'webdriver-manager update' to download binaries" comes, run below code
+
+(by Yildiray Meric)_Just execute webdriver-manager with npx command in your project folder;
+npx webdriver-manager update
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+24- (few npm install and build commands):
+npm rebuild						used to clean node-modules and perform fresh install
+npm run build	or,	 npm run-script build		used to transpile TS to JS
+npm install						used to perform 1st time install of any packages
+npm t							a custom command (instead of protractor conf.js) to run tests/specs/step def files
 
 
 
