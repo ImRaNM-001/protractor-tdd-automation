@@ -153,7 +153,7 @@ describe('handling elements in an angular app', () => {
 
         // validating the result,   way 1: (MOST EASY way) using expect
         console.log('The first name of last entry is', await tbl_lastRow_fName.getText() );
-        expect(await tbl_lastRow_fName.getText() ).not.toBe('Steve');     // passed [prints failed msg as....."Expected 'Neville' to be 'Steve'."]
+        expect(tbl_lastRow_fName.getText() ).not.toBe('Steve');     // passed [prints failed msg as....."Expected 'Neville' to be 'Steve'."]
 
         // way 2: programmers way using if condition
         if(await tbl_lastRow_fName.getText() !='Steve') console.log('Entry successfully deleted');       
