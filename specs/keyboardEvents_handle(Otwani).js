@@ -45,7 +45,7 @@ describe('handling various keyboard actions', () => {
         // $('=Elemental Selenium').click();            // this type of linkText identifcation works only in WDIO, here it throws red error "Failed: invalid selector: An invalid or illegal selector was specified"
 
         // switching control to the corresponding new window
-        const windowCount = await browser.getAllWindowHandles(),        // this code returns an array, here windowCount is an array        
+        const windowCount = await browser.getAllWindowHandles(),        // this code returns an array, here windowCount is an array and unlike Java we no need to write windowCount[]       
         orginalWindow = windowCount[0], firstWindow = windowCount[1];
 
         console.log('Total no of windows opened here are: ', windowCount.length);        
