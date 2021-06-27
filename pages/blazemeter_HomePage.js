@@ -3,7 +3,7 @@ class Blazemeter_HomePage{
     // 1st fn pair: creating separate parent and childs    
     get parentElement(){ 
         return $('ul.list-nav-links'); 
-    }
+    }   
 
     get childElements(){
         return this.parentElement.$$('li'); 
