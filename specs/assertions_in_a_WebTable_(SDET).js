@@ -60,7 +60,7 @@ describe('web table validations', () => {
     it('delete a product', async () => { 
         // identifying delete button for 1st row of the Product List table
         const delBtn_1stRow = $$('tr').get(1).$('#delete');
-        delBtn_1stRow.click();
+        delBtn_1stRow.click();    
 
         browser.sleep(1000);
 
